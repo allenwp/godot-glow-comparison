@@ -1,0 +1,256 @@
+[gd_scene load_steps=12 format=3 uid="uid://cre7u7jqqh7bq"]
+
+[ext_resource type="Shader" uid="uid://dkaeple7amxei" path="res://colour_sweep.gdshader" id="1_a202f"]
+[ext_resource type="Material" uid="uid://3ei0nm6l8gvs" path="res://stop1.material" id="2_a0tk4"]
+[ext_resource type="Material" uid="uid://xoi3tu5hdto1" path="res://stop4.material" id="3_r3fl7"]
+
+[sub_resource type="Environment" id="Environment_noarx"]
+background_mode = 1
+glow_enabled = true
+glow_levels/1 = 1.0
+glow_levels/3 = 0.0
+glow_levels/5 = 0.0
+glow_normalized = true
+glow_intensity = 1.0
+glow_blend_mode = 3
+
+[sub_resource type="QuadMesh" id="QuadMesh_a0tk4"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_r3fl7"]
+render_priority = 0
+shader = ExtResource("1_a202f")
+shader_parameter/log2_min = -3.0
+shader_parameter/log2_max = 2.0
+shader_parameter/clip_to_max = false
+shader_parameter/max_value = 10.0
+shader_parameter/clip_in_bt2020 = true
+shader_parameter/srgb = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_noarx"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_jka67"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i5arm"]
+shading_mode = 0
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_wc5p8"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jsk3o"]
+shading_mode = 0
+albedo_color = Color(0, 0, 0, 1)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_noarx")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.8003026, -0.18426138, 0, 0.28340203, 0.5203381, 0, 0, 0, 0.552, -0.16710937, -0.048489485, 0)
+mesh = SubResource("QuadMesh_a0tk4")
+surface_material_override/0 = SubResource("ShaderMaterial_r3fl7")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.71412235)
+projection = 1
+size = 1.38
+
+[node name="Stop1" type="Node" parent="."]
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Stop1"]
+transform = Transform3D(0.005407761, 0, 0, 0, 0.12643673, 0, 0, 0, 1.0000029, -0.6513216, 0.5790982, 0)
+material_override = ExtResource("2_a0tk4")
+mesh = SubResource("QuadMesh_noarx")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Stop1"]
+transform = Transform3D(0.01057205, 0, 0, 0, 0.12643673, 0, 0, 0, 1.0000029, -0.60877854, 0.5790982, 0)
+material_override = ExtResource("2_a0tk4")
+mesh = SubResource("QuadMesh_noarx")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Stop1"]
+transform = Transform3D(0.015528705, 0, 0, 0, 0.12643673, 0, 0, 0, 1.0000029, -0.5486634, 0.5790982, 0)
+material_override = ExtResource("2_a0tk4")
+mesh = SubResource("QuadMesh_noarx")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Stop1"]
+transform = Transform3D(0.038236357, 0, 0, 0, 0.12643673, 0, 0, 0, 1.0000029, -0.4552536, 0.5790982, 0)
+material_override = ExtResource("2_a0tk4")
+mesh = SubResource("QuadMesh_noarx")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="Stop1"]
+transform = Transform3D(0.0027038802, 0.10949742, 0, -0.0046832585, 0.063218355, 0, 0, 0, 1.0000029, -0.60403866, 0.44304463, 0)
+material_override = ExtResource("2_a0tk4")
+mesh = SubResource("QuadMesh_noarx")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="Stop1"]
+transform = Transform3D(0.0052860244, 0.10949742, 0, -0.009155665, 0.063218355, 0, 0, 0, 1.0000029, -0.5827671, 0.40620127, 0)
+material_override = ExtResource("2_a0tk4")
+mesh = SubResource("QuadMesh_noarx")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="Stop1"]
+transform = Transform3D(0.0077643516, 0.10949741, 0, -0.013448253, 0.063218355, 0, 0, 0, 1.0000029, -0.5527096, 0.35414, 0)
+material_override = ExtResource("2_a0tk4")
+mesh = SubResource("QuadMesh_noarx")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D9" type="MeshInstance3D" parent="Stop1"]
+transform = Transform3D(0.019118177, 0.10949741, 0, -0.033113655, 0.063218355, 0, 0, 0, 1.0000027, -0.5060047, 0.27324477, 0)
+material_override = ExtResource("2_a0tk4")
+mesh = SubResource("QuadMesh_noarx")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Stop1"]
+transform = Transform3D(0.064202935, 0.049281258, 0, -0.027857624, 0.11357757, 0, 0, 0, 0.04537618, -0.28830218, 0.5282315, 0)
+material_override = ExtResource("2_a0tk4")
+mesh = SubResource("CapsuleMesh_jka67")
+
+[node name="MeshInstance3D10" type="MeshInstance3D" parent="Stop1"]
+transform = Transform3D(0.062415976, 0.03941351, 0, -0.027082264, 0.09083556, 0, 0, 0, 0.04537618, -0.28830218, 0.5282315, 0.08601081)
+material_override = SubResource("StandardMaterial3D_i5arm")
+mesh = SubResource("CapsuleMesh_jka67")
+
+[node name="MeshInstance3D11" type="MeshInstance3D" parent="Stop1"]
+transform = Transform3D(0.001, 0, 0, 0, 0.001, 0, 0, 0, 0.001, -0.09573007, 0.62434065, 0)
+material_override = ExtResource("2_a0tk4")
+mesh = SubResource("SphereMesh_wc5p8")
+
+[node name="MeshInstance3D13" type="MeshInstance3D" parent="Stop1"]
+transform = Transform3D(0.003, 0, 0, 0, 0.003, 0, 0, 0, 0.003, -0.04948771, 0.62434065, 0)
+material_override = ExtResource("2_a0tk4")
+mesh = SubResource("SphereMesh_wc5p8")
+
+[node name="MeshInstance3D14" type="MeshInstance3D" parent="Stop1"]
+transform = Transform3D(0.006, 0, 0, 0, 0.006, 0, 0, 0, 0.006, 0.0060032606, 0.62434065, 0)
+material_override = ExtResource("2_a0tk4")
+mesh = SubResource("SphereMesh_wc5p8")
+
+[node name="MeshInstance3D12" type="MeshInstance3D" parent="Stop1"]
+transform = Transform3D(0.012, 0, 0, 0, 0.012, 0, 0, 0, 0.012, 0.05779481, 0.62434065, 0)
+material_override = ExtResource("2_a0tk4")
+mesh = SubResource("SphereMesh_wc5p8")
+
+[node name="MeshInstance3D15" type="MeshInstance3D" parent="Stop1"]
+transform = Transform3D(0.024, 0, 0, 0, 0.024, 0, 0, 0, 0.024, -0.08278215, 0.5605261, 0)
+material_override = ExtResource("2_a0tk4")
+mesh = SubResource("SphereMesh_wc5p8")
+
+[node name="MeshInstance3D16" type="MeshInstance3D" parent="Stop1"]
+transform = Transform3D(0.035, 0, 0, 0, 0.035, 0, 0, 0, 0.035, 0.01247704, 0.560526, 0)
+material_override = ExtResource("2_a0tk4")
+mesh = SubResource("SphereMesh_wc5p8")
+
+[node name="MeshInstance3D17" type="MeshInstance3D" parent="Stop1"]
+transform = Transform3D(0.042, 0, 0, 0, 0.042, 0, 0, 0, 0.042, -0.08000755, 0.45046917, 0)
+material_override = ExtResource("2_a0tk4")
+mesh = SubResource("SphereMesh_wc5p8")
+
+[node name="MeshInstance3D18" type="MeshInstance3D" parent="Stop1"]
+transform = Transform3D(0.063, 0, 0, 0, 0.063, 0, 0, 0, 0.063, 0.028199673, 0.45786792, 0)
+material_override = ExtResource("2_a0tk4")
+mesh = SubResource("SphereMesh_wc5p8")
+
+[node name="Stop4" type="Node" parent="."]
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Stop4"]
+transform = Transform3D(0.005407761, 0, 0, 0, 0.12643673, 0, 0, 0, 1.0000029, 0.4017076, 0.54386735, 0)
+material_override = ExtResource("3_r3fl7")
+mesh = SubResource("QuadMesh_noarx")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Stop4"]
+transform = Transform3D(0.01057205, 0, 0, 0, 0.12643673, 0, 0, 0, 1.0000029, 0.44425064, 0.54386735, 0)
+material_override = ExtResource("3_r3fl7")
+mesh = SubResource("QuadMesh_noarx")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Stop4"]
+transform = Transform3D(0.015528705, 0, 0, 0, 0.12643673, 0, 0, 0, 1.0000029, 0.5043658, 0.54386735, 0)
+material_override = ExtResource("3_r3fl7")
+mesh = SubResource("QuadMesh_noarx")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Stop4"]
+transform = Transform3D(0.038236357, 0, 0, 0, 0.12643673, 0, 0, 0, 1.0000029, 0.5977756, 0.54386735, 0)
+material_override = ExtResource("3_r3fl7")
+mesh = SubResource("QuadMesh_noarx")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="Stop4"]
+transform = Transform3D(0.0027038802, 0.10949742, 0, -0.0046832585, 0.063218355, 0, 0, 0, 1.0000029, 0.44899052, 0.40781376, 0)
+material_override = ExtResource("3_r3fl7")
+mesh = SubResource("QuadMesh_noarx")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="Stop4"]
+transform = Transform3D(0.0052860244, 0.10949742, 0, -0.009155665, 0.063218355, 0, 0, 0, 1.0000029, 0.47026205, 0.3709704, 0)
+material_override = ExtResource("3_r3fl7")
+mesh = SubResource("QuadMesh_noarx")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="Stop4"]
+transform = Transform3D(0.0077643516, 0.10949741, 0, -0.013448253, 0.063218355, 0, 0, 0, 1.0000029, 0.5003196, 0.31890914, 0)
+material_override = ExtResource("3_r3fl7")
+mesh = SubResource("QuadMesh_noarx")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D9" type="MeshInstance3D" parent="Stop4"]
+transform = Transform3D(0.019118177, 0.10949741, 0, -0.033113655, 0.063218355, 0, 0, 0, 1.0000027, 0.5470245, 0.2380139, 0)
+material_override = ExtResource("3_r3fl7")
+mesh = SubResource("QuadMesh_noarx")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Stop4"]
+transform = Transform3D(0.06509665, -0.04546436, 0, 0.025700016, 0.11515859, 0, 0, 0, 0.04537618, 0.26345956, 0.49300063, 0)
+material_override = ExtResource("3_r3fl7")
+mesh = SubResource("CapsuleMesh_jka67")
+
+[node name="MeshInstance3D10" type="MeshInstance3D" parent="Stop4"]
+transform = Transform3D(0.063284814, -0.036360882, 0, 0.024984708, 0.092099994, 0, 0, 0, 0.04537618, 0.26345956, 0.49300063, 0.08601081)
+material_override = SubResource("StandardMaterial3D_jsk3o")
+mesh = SubResource("CapsuleMesh_jka67")
+
+[node name="MeshInstance3D11" type="MeshInstance3D" parent="Stop4"]
+transform = Transform3D(0.001, 0, 0, 0, 0.001, 0, 0, 0, 0.001, 0.41751158, -0.20861816, 0)
+material_override = ExtResource("3_r3fl7")
+mesh = SubResource("SphereMesh_wc5p8")
+
+[node name="MeshInstance3D13" type="MeshInstance3D" parent="Stop4"]
+transform = Transform3D(0.003, 0, 0, 0, 0.003, 0, 0, 0, 0.003, 0.46375394, -0.20861816, 0)
+material_override = ExtResource("3_r3fl7")
+mesh = SubResource("SphereMesh_wc5p8")
+
+[node name="MeshInstance3D14" type="MeshInstance3D" parent="Stop4"]
+transform = Transform3D(0.006, 0, 0, 0, 0.006, 0, 0, 0, 0.006, 0.5192449, -0.20861816, 0)
+material_override = ExtResource("3_r3fl7")
+mesh = SubResource("SphereMesh_wc5p8")
+
+[node name="MeshInstance3D12" type="MeshInstance3D" parent="Stop4"]
+transform = Transform3D(0.012, 0, 0, 0, 0.012, 0, 0, 0, 0.012, 0.57103646, -0.20861816, 0)
+material_override = ExtResource("3_r3fl7")
+mesh = SubResource("SphereMesh_wc5p8")
+
+[node name="MeshInstance3D15" type="MeshInstance3D" parent="Stop4"]
+transform = Transform3D(0.024, 0, 0, 0, 0.024, 0, 0, 0, 0.024, 0.3763547, -0.41335633, 0)
+material_override = ExtResource("3_r3fl7")
+mesh = SubResource("SphereMesh_wc5p8")
+
+[node name="MeshInstance3D16" type="MeshInstance3D" parent="Stop4"]
+transform = Transform3D(0.035, 0, 0, 0, 0.035, 0, 0, 0, 0.035, 0.47161388, -0.41335645, 0)
+material_override = ExtResource("3_r3fl7")
+mesh = SubResource("SphereMesh_wc5p8")
+
+[node name="MeshInstance3D17" type="MeshInstance3D" parent="Stop4"]
+transform = Transform3D(0.042, 0, 0, 0, 0.042, 0, 0, 0, 0.042, 0.14509548, -0.573743, 0)
+material_override = ExtResource("3_r3fl7")
+mesh = SubResource("SphereMesh_wc5p8")
+
+[node name="MeshInstance3D18" type="MeshInstance3D" parent="Stop4"]
+transform = Transform3D(0.063, 0, 0, 0, 0.063, 0, 0, 0, 0.063, 0.2533027, -0.56634426, 0)
+material_override = ExtResource("3_r3fl7")
+mesh = SubResource("SphereMesh_wc5p8")
