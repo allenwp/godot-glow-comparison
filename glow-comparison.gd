@@ -39,7 +39,7 @@ func _ready() -> void:
 	await get_tree().create_timer(0).timeout
 	await RenderingServer.frame_post_draw
 	
-	print("| Mobile (this PR) | Mobile (4.5) | Forward+ (4.5)\n| --- | --- | ---")
+	print("\n| Mobile (this PR) | Mobile (4.5) | Forward+ (4.5)\n| --- | --- | ---")
 	for level in range(7):
 		for l in range(7):
 			if l ==  level:
