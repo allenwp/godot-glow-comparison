@@ -21,5 +21,4 @@ window/size/viewport_height=1152
 
 [rendering]
 
-renderer/rendering_method="mobile"
 viewport/hdr_2d=true

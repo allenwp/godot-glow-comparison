@@ -1,6 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://cre7u7jqqh7bq"]
+[gd_scene load_steps=13 format=3 uid="uid://cre7u7jqqh7bq"]
 
 [ext_resource type="Shader" uid="uid://dkaeple7amxei" path="res://colour_sweep.gdshader" id="1_a202f"]
+[ext_resource type="Script" uid="uid://cecjd5rua5pfg" path="res://glow-comparison.gd" id="1_r3fl7"]
 [ext_resource type="Material" uid="uid://3ei0nm6l8gvs" path="res://stop1.material" id="2_a0tk4"]
 [ext_resource type="Material" uid="uid://xoi3tu5hdto1" path="res://stop4.material" id="3_r3fl7"]
 
@@ -41,8 +42,10 @@ shading_mode = 0
 albedo_color = Color(0, 0, 0, 1)
 
 [node name="Node3D" type="Node3D"]
+script = ExtResource("1_r3fl7")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+unique_name_in_owner = true
 environment = SubResource("Environment_noarx")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
