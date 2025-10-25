@@ -13,6 +13,8 @@ const FILENAME = "update_mobile"
 func _ready() -> void:
 	var env := world_environment.environment
 	
+	env.glow_hdr_threshold = 0.0
+	
 	get_window().use_hdr_2d = true;
 	await get_tree().create_timer(0).timeout
 	await RenderingServer.frame_post_draw
@@ -60,7 +62,7 @@ func _ready() -> void:
 		await get_tree().create_timer(0).timeout
 		await RenderingServer.frame_post_draw
 		var folder_path: String = "glow_comparison/level_%d/" % (level + 1)
-		DirAccess.make_dir_recursive_absolute("%s" % folder_path)
+		DirAccess.make_dir_recursive_absolute("user://%s" % folder_path)
 		_save_image("%s%s" % [folder_path, FILENAME])
 
 		var table_line: String = ""
